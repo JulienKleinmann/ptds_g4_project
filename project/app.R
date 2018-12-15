@@ -8,7 +8,7 @@ library(shinyjs)
 ui <- fluidPage( includeCSS("www/bootstrap.css"), 
                  navbarPage(h1("THE MOJITO GAME",
                                style = "font-family: 'Neucha', cursive;
-                               font-weight: 500; line-height: 1.1;
+                               font-weight: 500; line-height: 1.1; font-size : 60px;
                                color: #28a745;"),
                             
                             tabPanel(
@@ -166,12 +166,13 @@ ui <- fluidPage( includeCSS("www/bootstrap.css"),
                                      
                                      div(id="startbutton",
                                          
-                                         actionBttn(
-                                       inputId = "start",
-                                       label = "start",
-                                       color = "primary",
-                                       size = "lg",
-                                       style = "unite"),
+                                         actionButton(
+                                           inputId = "start",
+                                           label = "START",
+                                           style = 'padding:50px; font-size:250%',
+                                           class = "btn btn-success" 
+                                         ),
+                                      
                                        
                                        style="padding-left: 550px;padding-top: 20px;"
                                        ),
@@ -345,11 +346,12 @@ ui <- fluidPage( includeCSS("www/bootstrap.css"),
                                                      ),
                                                      
                                                      column(5,tags$h4("Dataframe of what has happened:",style="padding-bottom: 10px;"),
-                                                            actionBttn(
+                                                            actionButton(
                                                               inputId = "refresh",
-                                                              label = "refresh",
-                                                              color = "primary",
-                                                              style = "pill"),
+                                                              label = icon("refresh"),
+                                                              style = 'padding:20px; font-size:100%',
+                                                              class = "btn btn-success" 
+                                                            ),
                                                             div(style="padding-bottom: 20px;"),
                                                             dataTableOutput('loc'))
                                                      
